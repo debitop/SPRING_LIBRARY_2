@@ -22,7 +22,7 @@ public class StudentRepositoryImpl implements StudentRepository {
         Session session = sessionFactory.getCurrentSession();
 
 
-        return session.createQuery("from student").list();
+        return session.createQuery("from Student").list();
     }
 
     @Override

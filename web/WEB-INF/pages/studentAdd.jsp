@@ -11,6 +11,23 @@
     <title>Title</title>
 </head>
 <body>
+<form method="post" action="/student/addStudent">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>age</td>
+            <td><input type="text" name="age"></td>
+        </tr>
+        <tr>
+            <td>admin</td>
+            <td><input type="checkbox" name="admin"></td>
+        </tr>
+    </table>
+    <input type="submit" name="save">
 
+</form>
 </body>
 </html>
