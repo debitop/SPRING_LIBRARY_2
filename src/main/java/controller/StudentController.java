@@ -40,7 +40,7 @@ public class StudentController {
         student.setAdmin(admin);
         student.setCreated_date();
         studentRepository.addStudent(student);
-        return "redirect:/";
+        return "redirect:/student";
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/delStudent/${id}")

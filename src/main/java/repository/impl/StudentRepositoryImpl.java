@@ -20,8 +20,6 @@ public class StudentRepositoryImpl implements StudentRepository {
     @Override
     public List<Student> getStudents() {
         Session session = sessionFactory.getCurrentSession();
-
-
         return session.createQuery("from Student").list();
     }
 
