@@ -12,5 +12,21 @@
 </head>
 <body>
 
+<form method="post" action="/book/addBook/{studentId}">
+    <table border="1" cellpadding="1" cellspacing="1">
+        <tr>
+            <td>Author</td>
+            <td><input type="text" name="author"></td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td><input type="text" name="title"></td>
+        </tr>
+    </table>
+    <input type="submit" name="Save">
+
+</form>
+
+
 </body>
 </html>

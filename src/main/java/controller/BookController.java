@@ -55,7 +55,7 @@ public class BookController {
         return "redirect:/book/bookList/{studentId}";
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/addBook/{studentId")
+    @RequestMapping(method = RequestMethod.GET, value = "/addBook/{studentId}")
     public String addBook(@PathVariable("studentId") Integer studentId, Model model) {
         model.addAttribute("studentId", studentId);
         return "bookAdd";
