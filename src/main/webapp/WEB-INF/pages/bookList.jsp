@@ -35,7 +35,7 @@
 
 
 </table>
-<a href="/book/addBook/{studentId}">Add book</a>
+<a href="/book/addBook/${studentId}">Add book</a>
 <a href="/student/">Students</a>
 </body>
 </html>

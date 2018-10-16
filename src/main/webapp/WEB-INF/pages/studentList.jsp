@@ -20,17 +20,22 @@
         <td>age</td>
         <td>admin</td>
         <td>date</td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <c:forEach items="${students}" var="st">
         <tr>
-            <c:out value="${st.id}"/>
-            <c:out value="${st.name}"/>
-            <c:out value="${st.age}"/>
-            <c:out value="${st.admin}"/>
-            <c:out value="${st.created_date}"/>
+            <td><c:out value="${st.id}"/></td>
+            <td><c:out value="${st.name}"/></td>
+            <td><c:out value="${st.age}"/></td>
+            <td><c:out value="${st.admin}"/></td>
+            <td><c:out value="${st.created_date}"/></td>
+            <td><a href="/student/editStudent/${st.id}">EditStudent</a></td>
+            <td><a href="/student/delStudent/${st.id}">Delete</a></td>
+            <td><a href="/book/bookList/${st.id}">Books</a></td>
         </tr>
-        <tr><a href="/student/editStudent/${st.id}">EditStudent</a></tr>
-        <tr><a href="/student/delStudent/${st.id}">Delete</a></tr>
+
 
     </c:forEach>
 </table>

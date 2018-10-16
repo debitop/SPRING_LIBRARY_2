@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<form:form method="post" action="/editStudent/${id}" modelAttribute="student">
+<form:form method="post" action="/student/editStudent/${student.id}" modelAttribute="student">
     <table>
         <tr>
             <td><form:label path="id">Id</form:label></td>
@@ -28,10 +28,10 @@
             <td><form:input path="age"/></td>
         </tr>
         <tr>
-            <td><form:checkbox path="admin">Admin</form:checkbox></td>
+            <td>Admin<form:checkbox path="admin"/></td>
         </tr>
         <tr>
-            <td><form:label path="createddate">CreatedDate</form:label></td>
+            <td><form:label path="created_date">CreatedDate</form:label></td>
             <td><form:input path="created_date"/></td>
         </tr>
     </table>

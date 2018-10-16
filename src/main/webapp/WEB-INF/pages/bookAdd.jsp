@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<form method="post" action="/book/addBook/{studentId}">
+<form method="post" action="/book/addBook/${studentId}">
     <table border="1" cellpadding="1" cellspacing="1">
         <tr>
             <td>Author</td>

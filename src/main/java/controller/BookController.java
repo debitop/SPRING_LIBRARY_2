@@ -25,6 +25,8 @@ public class BookController {
     public String listBook(@PathVariable("studentId") Integer studentId, Model model) {
         List<Book> books = bookRepository.listBook(studentId);
         model.addAttribute("books", books);
+        model.addAttribute("studentId", studentId);
+
         return "bookList";
     }
 
@@ -62,11 +64,12 @@ public class BookController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/addBook/{studentId}")
-    public String addBook(@PathVariable("studentId") Integer studentId, @RequestParam("author") String author, @RequestParam("title") String title) {
+    public String addBook(@PathVariable("studentId") Integer studentId, @RequestParam("author") String author, @RequestParam("title") String title,Model model) {
         Book book = new Book();
         book.setTitle(title);
         book.setAuthor(author);
         bookRepository.addBook(book, studentId);
+        model.addAttribute("studentId", studentId);
         return "redirect:/book/bookList/{studentId}";
     }
 

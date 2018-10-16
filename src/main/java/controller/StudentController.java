@@ -33,34 +33,34 @@ public class StudentController {
 
     // TODO: 02.10.2018 admin?
     @RequestMapping(method = RequestMethod.POST, value = "/addStudent")
-    public String addStudent(@RequestParam("name") String name, @RequestParam("age") String age, @RequestParam("admin") Boolean admin) {
+    public String addStudent(@RequestParam("name") String name, @RequestParam("age") String age, @RequestParam(name = "admin", defaultValue = "false") Boolean admin) {
         Student student = new Student();
         student.setName(name);
         student.setAge(Integer.parseInt(age));
         student.setAdmin(admin);
         student.setCreated_date();
         studentRepository.addStudent(student);
-        return "redirect:/student";
+        return "redirect:/student/";
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/delStudent/${id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/delStudent/{id}")
     public String delStudent(@PathVariable("id") Integer id) {
         studentRepository.delStudent(id);
-        return "redirect:/";
+        return "redirect:/student/";
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/editStudent/${id}")
+    @RequestMapping(method = RequestMethod.POST, value = "/editStudent/{id}")
     public String editStudent(@PathVariable("id") Integer id, @RequestParam("name") String name, @RequestParam("age") String age,
-                              @RequestParam("admin") Boolean admin) {
+                              @RequestParam(name = "admin", defaultValue = "false") Boolean admin) {
         Student student = studentRepository.getStudentById(id);
         student.setAdmin(admin);
         student.setAge(Integer.parseInt(age));
         student.setName(name);
         studentRepository.editStudent(student);
-        return "redirect:/";
+        return "redirect:/student/";
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/editStudent/${id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/editStudent/{id}")
     public String editStudent(@PathVariable("id") Integer id, Model model) {
         Student student = studentRepository.getStudentById(id);
         model.addAttribute("student", student);
